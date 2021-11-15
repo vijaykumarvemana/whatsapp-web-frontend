@@ -5,8 +5,9 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
 import "../styles/sidebar.css"
 import { Col, Row, Container } from "react-bootstrap"; 
-import Chat from "./Chat";
+
 import Chats from "./Chats";
+import ChatRoom from "./ChatRoom";
 
 const SideBar = () => {
 
@@ -34,14 +35,14 @@ const SideBar = () => {
         <Chats />
         <Chats />
         <Chats />
+        <Chats />
+        <Chats />
         
       </div>
-
-    
     </div>
     </Col>
     <Col sm={8} >
-        <Chat />
+        <ChatRoom />
 
     </Col>
          

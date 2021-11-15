@@ -6,7 +6,7 @@
   
   .chatroom-header {
     display: flex;
-    padding: 15px;
+    padding: 3px;
     align-items: center;
     border-bottom: 1px solid rgb(241, 240, 240);
   }

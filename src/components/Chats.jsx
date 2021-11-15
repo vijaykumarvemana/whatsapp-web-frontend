@@ -6,7 +6,7 @@ const Chats = () => {
         <div className="chats">
           <Avatar />
           <div className="chats-info">
-            <h3>name</h3>
+            <h5>name</h5>
             <p>message</p>
           </div>
         </div>

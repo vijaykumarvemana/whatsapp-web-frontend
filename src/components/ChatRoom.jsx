@@ -9,7 +9,7 @@ import "../styles/chats.css"
 
 
 
-const Chat = () => {
+const ChatRoom = () => {
     return (
         <div className="chatroom">
       <div className="chatroom-header">
@@ -55,4 +55,4 @@ const Chat = () => {
 }
 
 
-export default Chat;
+export default ChatRoom;

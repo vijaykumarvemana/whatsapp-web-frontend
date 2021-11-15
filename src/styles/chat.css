@@ -1,7 +1,8 @@
 .chats {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 3px;
+    margin-left: 10px;
     cursor: pointer;
     border: 1px solid rgb(250, 249, 249);
   }
