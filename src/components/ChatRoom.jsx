@@ -3,7 +3,6 @@ import SearchIcon from "@material-ui/icons/Search";
 import SendIcon from "@material-ui/icons/Send";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import MicIcon from "@material-ui/icons/Mic";
 import "../styles/Chatroom.css"
 import { InsertEmoticon } from "@material-ui/icons";
@@ -12,7 +11,7 @@ import { InsertEmoticon } from "@material-ui/icons";
 
 const ChatRoom = () => {
     return (
-        <div className="chatroom">
+        <div className="chatroom ">
       <div className="chatroom-header">
         <Avatar />
         <div className="chatroom-headerinfoleft">
@@ -28,7 +27,7 @@ const ChatRoom = () => {
           </IconButton>
         </div>
       </div>
-      <div className="chatroom-body">
+      <div className="chatroom-body  ">
         <p className="chatroom-message">
           <span className="chatroom-name">name</span>
           <span className="chatroom-timestamp">{new Date().toUTCString()}</span>
@@ -41,6 +40,7 @@ const ChatRoom = () => {
           <span className="chatroom-name">name</span>
           <span className="chatroom-timestamp">{new Date().toUTCString()}</span>
            </p>
+           
            
      
       </div>

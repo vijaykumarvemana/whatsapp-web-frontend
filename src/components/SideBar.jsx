@@ -19,6 +19,7 @@ const SideBar = () => {
           <IconButton>
             <ChatIcon />
           </IconButton>
+          
           <IconButton>
             <MoreVertIcon />
           </IconButton>
@@ -38,6 +39,7 @@ const SideBar = () => {
         <Chats />
         <Chats />
         <Chats />
+        
       </div>
     </div>
   );

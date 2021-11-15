@@ -9,6 +9,7 @@ const Chats = () => {
             <h5>name</h5>
             <p>message</p>
           </div>
+          
         </div>
      
     )
