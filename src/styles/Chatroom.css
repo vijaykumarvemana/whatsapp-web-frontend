@@ -95,10 +95,7 @@
   
   .chatroom-footer > form > button {
     border: none;
-    
-    color: white;
-    
-    border-radius: 50%;
+    border-radius: 50px;
   }
   
   .chatroom-footer > form > input:focus {
