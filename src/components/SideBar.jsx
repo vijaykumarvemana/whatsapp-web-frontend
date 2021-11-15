@@ -3,25 +3,25 @@ import ChatIcon from "@material-ui/icons/Chat";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
-import "../styles/sidebar.css"
-import { Col, Row, Container } from "react-bootstrap"; 
-
+import "../styles/sidebar.css";
+import { IconButton } from "@material-ui/core";
 import Chats from "./Chats";
-import ChatRoom from "./ChatRoom";
 
 const SideBar = () => {
-
-    return( 
-
-     <Row className= "no-gutters">
-          <Col sm={4}  >
- <div className="sidebar">
+  return (
+    <div className="sidebar">
       <div className="sidebar-header">
         <Avatar />
         <div className="sidebar-headerright">
-          <DonutLargeIcon />
-          <ChatIcon />
-          <MoreVertIcon />
+          <IconButton>
+            <DonutLargeIcon />
+          </IconButton>
+          <IconButton>
+            <ChatIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
         </div>
       </div>
       <div className="siebar-search">
@@ -37,21 +37,9 @@ const SideBar = () => {
         <Chats />
         <Chats />
         <Chats />
-        
       </div>
     </div>
-    </Col>
-    <Col sm={8} >
-        <ChatRoom />
+  );
+};
 
-    </Col>
-         
-     </Row>   
-   
-
-
-    )
-}
-
-
-export default  SideBar
+export default SideBar;

@@ -11,7 +11,7 @@
     justify-content: space-between;
     border-right: 1px solid lightgray;
     background-color: #eef0ef;
-    padding: 15px;
+    padding: 23px;
   }
   
   .sidebar-headerright {
@@ -44,6 +44,7 @@
     width: 80%;
     border: none;
     margin-left: 15px;
+    outline-width: 0;
     color: gray;
   }
   .sidebar-searchcontainer > .MuiSvgIcon-root {
