@@ -6,6 +6,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import MicIcon from "@material-ui/icons/Mic";
 import "../styles/Chatroom.css"
+import { InsertEmoticon } from "@material-ui/icons";
 
 
 
@@ -32,17 +33,35 @@ const ChatRoom = () => {
           <span className="chatroom-name">name</span>
           <span className="chatroom-timestamp">{new Date().toUTCString()}</span>
            </p>
+           <p className="chatroom-message chatroom-reciever">
+          <span className="chatroom-name">name</span>
+          <span className="chatroom-timestamp">{new Date().toUTCString()}</span>
+           </p>
+           <p className="chatroom-message">
+          <span className="chatroom-name">name</span>
+          <span className="chatroom-timestamp">{new Date().toUTCString()}</span>
+           </p>
+           
      
       </div>
-      <div className="chatroom-footer">
-        <SentimentVerySatisfiedIcon />
+      <div className="chatroom-footer m-2">
+        <IconButton>
+        <InsertEmoticon />
+        </IconButton>
+        <IconButton>
+        <AttachFileIcon />
+        </IconButton>
         <form>
-          <input placeholder="Type a message" type="text" />
+          <input placeholder="Type a message here" type="text" />
           <button  type="submit">
+            <IconButton>
             <SendIcon />
+            </IconButton>
           </button>
         </form>
+        <IconButton>
         <MicIcon />
+        </IconButton>
       </div>
     </div>
 

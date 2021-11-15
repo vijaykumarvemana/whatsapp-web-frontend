@@ -10,9 +10,9 @@ import ChatRoom from './components/ChatRoom';
 
 function App() {
   return (
-    <Row className="no-gutters">
+    <Row className="no-gutters app">
       <Router>
-     <Col sm={4}  >
+     <Col sm={4} >
        <SideBar />
        </Col>
        <Col sm={8}  >
