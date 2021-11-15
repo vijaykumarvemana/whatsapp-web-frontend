@@ -11,10 +11,12 @@ function App() {
       <Router>
         <div className="logo">
           <BsWhatsapp
-            className="ml-5 mt-4"
-            style={{ height: '50px', width: '50px' }}
+            className="mt-4"
+            style={{ height: '36px', width: '36px', marginLeft: '11rem' }}
           />
-          <h6 className="ml-4 mt-4">WHATSAPP WEB</h6>
+          <h6 className="ml-4" style={{ marginTop: '34px' }}>
+            WHATSAPP WEB
+          </h6>
         </div>
         <div className="auth-wrapper">
           <div className="auth-inner">
