@@ -22,7 +22,7 @@ handleSubmit = async (e) => {
         console.log(this.state.loggedinUser)
         
         try {
-            let response = await fetch("http://localhost:3001/whatsapp/auth/login", {
+            let response = await fetch("http://localhost:3001/whatsapp/login", {
                 method: 'POST',
                 body: JSON.stringify(this.state.loggedinUser),
                 headers: {
@@ -30,6 +30,10 @@ handleSubmit = async (e) => {
                 }
             })
             if (response.ok) {
+               let data = await response.json()
+               console.log(data)
+
+               localStorage.setItem("token", data.token)
                
                 alert('Registration Successfull')
                 this.setState({

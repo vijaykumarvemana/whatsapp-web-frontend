@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
 
 export default class Newpassword extends Component {
     state={
@@ -20,7 +19,7 @@ handleSubmit = async (e) => {
         e.preventDefault()
         
         try {
-            let response = await fetch("http://localhost:3001/whatsapp/auth/passwordreset/:resetToken", {
+            let response = await fetch("http://localhost:3001/whatsapp/passwordreset/:resetToken", {
                 method: 'PUT',
                 body: JSON.stringify(this.state.newpassword),
                 headers: {
