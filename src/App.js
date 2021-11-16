@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { BsWhatsapp } from 'react-icons/bs'
+import Resetpassword from './components/Resetpassword'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Switch>
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
+              <Route path="/resetpassword" exact component={Resetpassword} />
             </Switch>
           </div>
         </div>
