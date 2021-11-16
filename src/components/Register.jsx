@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import Logo from "./Logo";
 
-export default class Register extends Component {
+import {connect} from "react-redux";
+
+
+const mapStateToProps = state => ({})
+const mapDispatchToProps = dispatch => ({
+    addUsers: (user) => dispatch({ type: "ADD_USERS", payload:user
+    })
+})
+
+ class Register extends Component {
 
     state={
         user:{
@@ -34,6 +43,9 @@ handleSubmit = async (e) => {
                 }
             })
             if (response.ok) {
+                let data = await response.json()
+                console.log(data)
+                this.props.addUsers(data)
                
                 alert('Registration Successfull')
                 this.setState({
@@ -95,3 +107,5 @@ handleSubmit = async (e) => {
         );
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

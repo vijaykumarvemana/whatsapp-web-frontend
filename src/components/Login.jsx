@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import Logo from "./Logo";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-export default class Login extends Component {
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = (dispatch) => ({
+    addUsers: (user) => dispatch({ type: "ADD_USERS", payload:user
+ })
+})
+
+
+class Login extends Component {
     state={
         loggedinUser:{
             email:'',
@@ -33,16 +43,19 @@ handleSubmit = async (e) => {
             if (response.ok) {
                let data = await response.json()
                console.log(data)
+                this.props.addUsers(data)
 
                localStorage.setItem("token", data.token)
                
-                alert('Registration Successfull')
+                alert('Login Successfull')
+                this.props.history.push('/')
                 this.setState({
                     loggedinUser: {
                         email: '',
                         password: ''
                     },
                 })
+              
             } else {
                 alert('SOMETHING WENT WRONG ON THE SERVER')
             }
@@ -97,3 +110,5 @@ handleSubmit = async (e) => {
         );
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Login));

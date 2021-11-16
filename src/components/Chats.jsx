@@ -1,5 +1,5 @@
 import { Avatar } from "@material-ui/core";
-import '../styles/chats.css'
+import '../styles/Chats.css'
 
 const Chats = () => {
     return(
