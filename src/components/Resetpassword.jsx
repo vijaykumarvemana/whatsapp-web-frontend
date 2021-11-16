@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import Logo from "./Logo";
 
 export default class Resetpassword extends Component {
     state={
@@ -44,8 +45,13 @@ handleSubmit = async (e) => {
         }
     }
     render() {
+       
+        
         return (
-           <div className=''>
+            <>
+            <Logo />
+           <div className='auth-wrapper'>
+               <div className="auth-inner">
             <form onSubmit={this.handleSubmit}>
                 <h3>Reset Password</h3>
 
@@ -58,7 +64,9 @@ handleSubmit = async (e) => {
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
             </form>
+           </div>
         </div>
+        </>
         );
     }
 }

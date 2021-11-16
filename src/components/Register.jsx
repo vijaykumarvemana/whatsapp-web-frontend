@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import Logo from "./Logo";
 
 export default class Register extends Component {
 
@@ -51,7 +52,12 @@ handleSubmit = async (e) => {
     }
 
     render() {
+        
         return (
+            <>
+            <Logo />
+            <div className='auth-wrapper'>
+               <div className="auth-inner">
             <form onSubmit={this.handleSubmit}>
                 <h3>Register</h3>
 
@@ -83,6 +89,9 @@ handleSubmit = async (e) => {
                     Already registered <Link to='/login'>Login?</Link>
                 </p>
             </form>
+            </div>
+            </div>
+            </>
         );
     }
 }

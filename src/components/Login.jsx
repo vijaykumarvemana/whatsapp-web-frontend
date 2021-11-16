@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import Logo from "./Logo";
 
 export default class Login extends Component {
     state={
@@ -52,7 +53,10 @@ handleSubmit = async (e) => {
 
     render() {
         return (
-           <div className=''>
+            <>
+            <Logo />
+           <div className='auth-wrapper'>
+               <div className="auth-inner">
             <form onSubmit={this.handleSubmit}>
                 <h3>Login</h3>
 
@@ -87,7 +91,9 @@ handleSubmit = async (e) => {
                     Don't have a account <Link to='/register'>Register?</Link>
                 </p>
             </form>
+            </div>
         </div>
+        </>
         );
     }
 }

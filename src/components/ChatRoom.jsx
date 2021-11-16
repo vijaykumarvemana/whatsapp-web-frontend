@@ -6,11 +6,21 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import MicIcon from "@material-ui/icons/Mic";
 import "../styles/Chatroom.css"
 import { InsertEmoticon } from "@material-ui/icons";
+import { Row, Col } from 'react-bootstrap'
+import SideBar from "./SideBar";
+
+
 
 
 
 const ChatRoom = () => {
     return (
+
+      <Row className="no-gutters app">
+          <Col sm={4}>
+            <SideBar />
+          </Col>
+          <Col sm={8}>
         <div className="chatroom ">
       <div className="chatroom-header">
         <Avatar />
@@ -64,7 +74,8 @@ const ChatRoom = () => {
         </IconButton>
       </div>
     </div>
-
+    </Col>
+</Row>
     );
 }
 
