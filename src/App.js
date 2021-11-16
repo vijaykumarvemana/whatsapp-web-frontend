@@ -1,3 +1,4 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Login from './components/Login'
@@ -5,11 +6,23 @@ import Register from './components/Register'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { BsWhatsapp } from 'react-icons/bs'
 import Resetpassword from './components/Resetpassword'
+import {Row, Col} from 'react-bootstrap';
+
+import SideBar from "./components/SideBar";
+import ChatRoom from './components/ChatRoom';
 
 function App() {
   return (
     <>
+    <Row className="no-gutters app">
       <Router>
+     <Col sm={4} >
+       <SideBar />
+       </Col>
+       <Col sm={8}  >
+        <Route exact path="/" component={ChatRoom} />
+         </Col>
+    </Row>
         <div className="logo">
           <BsWhatsapp
             className="mt-4"
@@ -31,6 +44,5 @@ function App() {
       </Router>
     </>
   )
-}
 
 export default App
