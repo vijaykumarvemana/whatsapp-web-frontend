@@ -58,6 +58,8 @@ export default class Login extends Component {
 	render() {
 		return (
 			<>
+            <Logo />
+            
 				{!this.state.loggedinUser.loggedIn ? (
 					<div className='auth-wrapper'>
 						<div className='auth-inner'>
