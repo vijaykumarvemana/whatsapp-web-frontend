@@ -25,7 +25,7 @@ export default class Register extends Component {
 		console.log(this.state.user);
 
 		try {
-			let response = await fetch('http://localhost:3001/whatsapp/register', {
+			let response = await fetch('http://localhost:3003/whatsapp/register', {
 				method: 'POST',
 				body: JSON.stringify(this.state.user),
 				headers: {

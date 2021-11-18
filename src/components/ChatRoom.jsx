@@ -8,12 +8,64 @@ import "../styles/Chatroom.css"
 import { InsertEmoticon } from "@material-ui/icons";
 import { Row, Col } from 'react-bootstrap'
 import SideBar from "./SideBar";
+import {connect} from 'react-redux'
+
+import { io } from "socket.io-client"
+import { useEffect } from "react";
+const mapStateToProps = (state) => ({
+  user: state.users
+    
+  })
+ 
+const mapDispatchToProps = (dispatch) => ({})
 
 
 
+const ADDRESS = "http://localhost:3003";
+
+const socket = io(ADDRESS, {transports: ['websocket']});
 
 
-const ChatRoom = () => {
+
+const ChatRoom = ({user}) => {
+
+  console.log(user)
+
+   useEffect(() => {
+
+    socket.on("connection", () => {
+      console.log("connected")
+      
+    })
+
+    // socket.current.on("getMessage", (data) => {
+    //   setArrivalMessage({
+    //     sender: data.senderId,
+    //     text: data.text,
+    //     createdAt: Date.now(),
+    //   });
+  
+  }, []);
+
+
+
+  const fetchUsers = async () =>{
+    try{
+      let response = await fetch(`${ADDRESS}/whatsapp/`
+      , {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}`
+        } 
+      })
+      let data = await response.json();
+      console.log(data)
+    }catch(error){
+      console.log(error)
+    }
+  }
+
     return (
 
       <Row className="no-gutters app">
@@ -80,4 +132,4 @@ const ChatRoom = () => {
 }
 
 
-export default ChatRoom;
+export default connect(mapStateToProps, mapDispatchToProps) (ChatRoom);

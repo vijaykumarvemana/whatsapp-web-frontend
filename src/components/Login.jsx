@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { connect } from "react-redux";
 
-export default class Login extends Component {
+const mapStateToProps = (state) => ({})
+
+const mapDispatchToProps = (dispatch) => ({
+    addUsers: (user) => {
+		dispatch({ type: "ADD_USER", 
+		payload:user
+ })
+}
+})
+
+class Login extends Component {
 	state = {
 		loggedinUser: {
 			email: '',
@@ -25,7 +36,7 @@ export default class Login extends Component {
 		console.log(this.state.loggedinUser);
 
 		try {
-			let response = await fetch('http://localhost:3001/whatsapp/login', {
+			let response = await fetch('http://localhost:3003/whatsapp/login', {
 				method: 'POST',
 				body: JSON.stringify(this.state.loggedinUser),
 				headers: {
@@ -35,7 +46,7 @@ export default class Login extends Component {
 			if (response.ok) {
 				let data = await response.json();
 				console.log(data);
-
+                this.props.addUsers(data.user)
 				localStorage.setItem('token', data.token);
 
 				alert('login Successfull');
@@ -122,3 +133,5 @@ export default class Login extends Component {
 		);
 	}
 }
+
+export default connect(mapStateToProps, mapDispatchToProps) (Login);
