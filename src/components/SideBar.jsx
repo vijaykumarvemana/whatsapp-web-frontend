@@ -7,6 +7,7 @@ import "../styles/sidebar.css";
 import { IconButton } from "@material-ui/core";
 import Chats from "./Chats";
 import { connect } from "react-redux";
+import { useEffect, useState} from 'react'
 
 
 const mapToState = (state) => ({
@@ -15,26 +16,26 @@ const mapToState = (state) => ({
 const mapDispatchToProps = (dispatch) => ({});
 
 
-const SideBar = ({user}) => {
+const SideBar = () => {
 
 
 
-  const [user, setUser] = useState(null);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  // const [user, setUser] = useState(null);
+  
 
-  useEffect(() => {
-    const friendId = conversation.members.find((m) => m !== currentUser._id);
+  // useEffect(() => {
+  //   const friendId = conversation.members.find((m) => m !== currentUser._id);
 
-    const getUser = async () => {
-      try {
-        const res = await axios("/users?userId=" + friendId);
-        setUser(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getUser();
-  }, [currentUser, conversation]);
+  //   const getUser = async () => {
+  //     try {
+  //       const res = await axios("/users?userId=" + friendId);
+  //       setUser(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   getUser();
+  // }, [currentUser, conversation]);
 
 //   console.log(user.user.username)
 
