@@ -7,7 +7,6 @@ const authState = {
     isLoggedIn: false,
     user: {
         username: "",
-        password: "",
         email: "",
        
     },
