@@ -87,7 +87,7 @@ useEffect(() => {
     getConversations();
   }, [user.user._id]);
 
-  console.log(conversations[0]._id)
+  // console.log(conversations[0]._id)
   useEffect(() => {
     const getMessages = async () => {
       try {
@@ -106,7 +106,7 @@ useEffect(() => {
     const message = {
       senderId: user.user._id,
       message: newMessage,
-      conversationId: conversations[0]._id,
+    //conversationId: conversations[0]._id,
     };
     console.log(message)
     const receiverId = currentChat?.participants.filter((participant) => participant !== user.user._id); 
