@@ -21,9 +21,9 @@ function App() {
             <Route path="/resetpassword" exact component={Resetpassword} />
           </div>
         </div> */}
-				<Route path='/' exact component={Login} />
+		{ /* <Route path='/' exact component={Login} />
 				<Route path='/register' exact component={Register} />
-				<Route path='/resetpassword' exact component={Resetpassword} />
+				<Route path='/resetpassword' exact component={Resetpassword} /> */}
 				<Route path='/chatroom' exact component={ChatRoom} />
 			</Router>
 		</>
